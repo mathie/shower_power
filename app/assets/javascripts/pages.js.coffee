@@ -21,8 +21,6 @@ $ ->
   # based on the two-tiered rate we really have. For that, I'd need to capture
   # the two rates, the point at which it switches to the cheaper rate each
   # month, and the average monthly usage.
-  #
-  # FIXME: I should take water cost into account, too.
   new Tangle document.getElementById("showerCosts"),
     initialize: ->
       this.incomingWaterTemperature = 10
@@ -31,6 +29,7 @@ $ ->
       this.minutesInShower          = 30
       this.boilerEfficiency         = 0.9
       this.gasCost                  = 0.03246
+      this.waterCost                = 0
       this.specificHeatOfWater      = 4186 # joules per kg-degree-C
       this.joulesToKwh              = 3600000
       this.showerFrequency          = 1
@@ -43,7 +42,7 @@ $ ->
       this.litresOfHotWater      = this.litresOfWater * this.percentageHotWater
       this.kgOfHotWater          = this.litresOfHotWater * 0.99225
       this.totalKwh              = (this.specificHeatOfWater * this.kgOfHotWater * this.waterTemperatureDelta / this.boilerEfficiency) / this.joulesToKwh
-      this.totalCost             = this.totalKwh * this.gasCost
+      this.totalCost             = this.totalKwh * this.gasCost + this.litresOfWater * this.waterCost
 
       switch this.showerFrequency
         when 0

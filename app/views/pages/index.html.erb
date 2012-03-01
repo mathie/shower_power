@@ -2,7 +2,8 @@
   <h1>Shower Power</h1>
 
   <p>
-    My son takes long showers. Like <span data-var="minutesInShower" class="TKAdjustableNumber" data-min="0" data-max="60"> minutes</span>.
+    My son takes <em>ages</em> in the shower.
+    Like <span data-var="minutesInShower" class="TKAdjustableNumber" data-min="0" data-max="60"> minutes</span>.
     I swear it's costing a fortune, but my wife doesn't believe me. These are
     the sorts of lengths I'll go to, just to prove my wife wrong.
   </p>
@@ -12,7 +13,7 @@
     <strong>
       &pound;<span data-var="totalCost" data-format="%.02f"></span>
     </strong>
-    every time my son has a shower! He generally showers
+    every time my son has a shower. He generally showers
     <span data-var="showerFrequency" class="TKAdjustableNumber" data-min="0" data-max="3" data-format="showerFrequency"> </span>
     which means it's costing me
     <strong>
@@ -21,22 +22,28 @@
     every year, just to keep him clean!
   </p>
 
+  <p>
+    How do you compare? Grab the highlighted numbers and drag them around to
+    see how much money you're pouring down the drain!
+  </p>
+
   <h2>Water coming in</h2>
 
   <p>
     The water comes into our house at about
-    <span data-var="incomingWaterTemperature" class="TKAdjustableNumber" data-min="-10" data-max="20"> &deg;C</span>
-    at this time of year. Our boiler then heats it up to about
-    <span data-var="heatedWaterTemperature" class="TKAdjustableNumber" data-min="10" data-max="100"> &deg;C</span>
-    before it gets mixed with cold water at the shower.
+    <span data-var="incomingWaterTemperature" class="TKAdjustableNumber" data-min="-10" data-max="20">&deg;C</span>
+    on average throughout the year. Our boiler then heats it up to about
+    <span data-var="heatedWaterTemperature" class="TKAdjustableNumber" data-min="10" data-max="100">&deg;C</span>
+    before it gets mixed with cold water at the shower. (It turns out that the
+    temperature the boiler heats it to doesn't really matter &ndash; try
+    playing with the numbers if you don't believe me!)
   </p>
 
   <p>
     This means the boiler (which is
     <span data-var="boilerEfficiency" class="TKAdjustableNumber" data-min="0" data-max="1" data-step="0.01" data-format="percent"></span>
     efficient at heating water) needs to heat the water by about
-    <span data-var="waterTemperatureDelta"> &deg;C</span>
-    in order for me to get that lovely warm shower.
+    <span data-var="waterTemperatureDelta">&deg;C</span>.
   </p>
 
   <h2>Shower</h2>
@@ -45,7 +52,7 @@
     Our shower pushes out
     <span data-var="showerFlowRate" class="TKAdjustableNumber" data-min="0" data-max="30"> litres</span>
     of water every minute. That means I'm pouring
-    <span data-var="litresOfWater"> litres</span> of water down the drain when I have a shower.
+    <span data-var="litresOfWater"> litres</span> of water down the drain when he has a shower.
   </p>
 
   <p>
@@ -62,6 +69,8 @@
   <p>
     It costs us
     <span data-var="gasCost" class="TKAdjustableNumber" data-min="0.00" data-max="0.20" data-step="0.001" data-format="pence"></span>
-    per kWh for our gas.
+    per kWh for our gas and
+    <span data-var="waterCost" class="TKAdjustableNumber" data-min="0.00" data-max="0.20" data-step="0.0001" data-format="pence"></span>
+    per litre for our water (including sewerage).
   </p>
 </div>

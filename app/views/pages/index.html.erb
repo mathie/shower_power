@@ -14,9 +14,9 @@
   </p>
 </div>
 
-<h2>Water coming in</h2>
+<div id="showerCosts">
+  <h2>Water coming in</h2>
 
-<div id="waterTemperature">
   <p>
     The water comes into our house at about
     <span data-var="incomingWaterTemperature" class="TKAdjustableNumber" data-min="-10" data-max="20"> &deg;C</span>
@@ -26,8 +26,41 @@
   </p>
 
   <p>
-    This means the boiler needs to heat the water by about
+    This means the boiler (which is
+    <span data-var="boilerEfficiency" class="TKAdjustableNumber" data-min="0" data-max="1" data-step="0.01" data-format="percent"></span>
+    efficient at heating water) needs to heat the water by about
     <span data-var="waterTemperatureDelta"> &deg;C</span>
     in order for me to get that lovely warm shower.
+  </p>
+
+  <h2>Shower</h2>
+
+  <p>
+    Our shower pushes out
+    <span data-var="showerFlowRate" class="TKAdjustableNumber" data-min="0" data-max="30"> litres</span>
+    of water every minute. And when I spend
+    <span data-var="minutesInShower" class="TKAdjustableNumber" data-min="0" data-max="60"> minutes</span>
+    in the shower, that means I'm pouring
+    <span data-var="litresOfWater"> litres</span> of water down the drain when I have a shower.
+  </p>
+
+  <h2>Costs</h2>
+
+  <p>
+    It costs us
+    &pound;<span data-var="gasCost" class="TKAdjustableNumber" data-min="0.00" data-max="1.50" data-step="0.01" data-format="%.02f"></span>
+    per kWh for our gas.
+  </p>
+
+  <p>
+    Given all that, it's costing you
+    <strong>
+      &pound;<span data-var="totalCost" data-format="%.02f"></span>
+    </strong>
+    every time you have a shower. If you like to keep clean and shower every day, then it's costing you
+    <strong>
+      &pound;<span data-var="annualCost" data-format="%.02f"></span>
+    </strong>
+    every year!
   </p>
 </div>

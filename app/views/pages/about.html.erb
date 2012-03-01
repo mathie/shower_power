@@ -1,0 +1,103 @@
+<div class="hero-unit">
+  <h1>About</h1>
+
+  <p>
+    I really did want to figure out how much the shower was costing me, and I
+    really do want to encourage my son, Malcolm (aged 4) to spend less time in
+    the shower. It's not like Malcolm will take any notice of hard data, but my
+    wife, Annabel, might. :)
+  </p>
+
+  <p>
+    However, there was another motive. I stumbled across a Javascript library
+    called <a href="http://worrydream.com/Tangle/" title="Tangle: explorable
+      explanations made easy">Tangle</a> which allows you to creative interactive
+    documents. I'm quite irrationally excited about it because I'm envisaging a
+    whole pile of situations where it would be awesomely useful. So I wanted to
+    play around, see if I could make it work.
+  </p>
+
+  <p>
+    Turns out it's pretty easy to work, and I reckon it works pretty well. What
+    do you think?
+  </p>
+
+  <h2>Methodology</h2>
+
+  <p>
+    Either I wasn't paying attention in Standard Grade Physics or it was just so
+    long ago that I've forgotten it all. So I had to go look up how much it costs
+    to heat water. Roughly speaking, here's what's happening:
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        Figure out how much we need to increase the water temperature by
+        (<em>heated water temperature - incoming supply water temperature</em>).
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Figure out the total number of litres of water by multiplying the flow rate
+        (per minute) by the number of minutes spent in the shower.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Figure out the number of litres of hot water being used, by figuring out
+        the mix of hot:cold being done at the shower.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        It turns out the weight (erm, mass, maybe? see above about paying attention
+        in physics!) isn't quite the same as the number of litres. I pretended to
+        care about this by multiplying is by 0.99225, the relative mass at
+        40&deg;C.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        The specific heat capacity of water (the amount of energy require to
+        increase the water's temperature by 1&deg;C) is 1 calorie per
+        cm<sup>3</sup>, which is equivalent to 4,186 joules/kg. So multiply the
+        mass of the hot water by the increase in temperature and multiple that by
+        this specific heat capacity and you've got the number of joules of energy
+        required to heat the water up.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Divide that by the efficiency of the boiler, and you'll get the number of
+        joules your crappy boiler needs to spend to heat up the water.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Now divide the number of joules by 3.6 million to convert it to kWh.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        And finally multiply it by the cost per kWh. One cost, at last!
+      </p>
+    </li>
+  </ol>
+
+  <p>
+    Have I got the methodology about right? I hope so!
+  </p>
+
+  <p>
+    Have something to say? Drop me a wee email to <%= mail_to 'mathie@woss.name' %>
+    and let me know what you think!
+  </p>
+</div>

@@ -2,9 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
-  new Tangle document.getElementById("example"),
+  new Tangle document.getElementById("waterTemperature"),
     initialize: ->
-      this.cookies = 4
-      this.caloriesPerCookie = 50
+      this.incomingWaterTemperature = 10
+      this.heatedWaterTemperature = 62
     update: ->
-      this.calories = this.cookies * this.caloriesPerCookie
+      this.waterTemperatureDelta = this.heatedWaterTemperature - this.incomingWaterTemperature

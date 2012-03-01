@@ -1,20 +1,26 @@
-<div class="hero-unit">
+<div class="hero-unit" id="showerCosts">
   <h1>Shower Power</h1>
 
   <p>
-    My son takes long showers. Like 30 minutes. I swear it's costing a fortune,
-    but my wife doesn't believe me. These are the sorts of lengths I'll go to,
-    just to prove my wife wrong.
+    My son takes long showers. Like <span data-var="minutesInShower" class="TKAdjustableNumber" data-min="0" data-max="60"> minutes</span>.
+    I swear it's costing a fortune, but my wife doesn't believe me. These are
+    the sorts of lengths I'll go to, just to prove my wife wrong.
   </p>
 
   <p>
-    Plus I just discovered a nifty wee Javascript framework called <%= link_to 'Tangle', 'http://worrydream.com/Tangle/' %>
-    that lets you play around with numbers and I wanted something simple to try
-    it out with.
+    It turns out, given the other variables below, it costs
+    <strong>
+      &pound;<span data-var="totalCost" data-format="%.02f"></span>
+    </strong>
+    every time my son has a shower! He generally showers
+    <span data-var="showerFrequency" class="TKAdjustableNumber" data-min="0" data-max="3" data-format="showerFrequency"> </span>
+    which means it's costing me
+    <strong>
+      &pound;<span data-var="annualCost" data-format="%.02f"></span>
+    </strong>
+    every year, just to keep him clean!
   </p>
-</div>
 
-<div id="showerCosts">
   <h2>Water coming in</h2>
 
   <p>
@@ -38,9 +44,7 @@
   <p>
     Our shower pushes out
     <span data-var="showerFlowRate" class="TKAdjustableNumber" data-min="0" data-max="30"> litres</span>
-    of water every minute. And when I spend
-    <span data-var="minutesInShower" class="TKAdjustableNumber" data-min="0" data-max="60"> minutes</span>
-    in the shower, that means I'm pouring
+    of water every minute. That means I'm pouring
     <span data-var="litresOfWater"> litres</span> of water down the drain when I have a shower.
   </p>
 
@@ -48,21 +52,7 @@
 
   <p>
     It costs us
-    &pound;<span data-var="gasCost" class="TKAdjustableNumber" data-min="0.00" data-max="1.50" data-step="0.01" data-format="%.02f"></span>
+    <span data-var="gasCost" class="TKAdjustableNumber" data-min="0.00" data-max="0.20" data-step="0.001" data-format="pence"></span>
     per kWh for our gas.
-  </p>
-
-  <p>
-    Given all that, it's costing me
-    <strong>
-      &pound;<span data-var="totalCost" data-format="%.02f"></span>
-    </strong>
-    every time I have a shower. Since I like to keep clean and shower
-    <span data-var="showerFrequency" class="TKAdjustableNumber" data-min="0" data-max="3" data-format="showerFrequency"> </span>
-    then it's costing me
-    <strong>
-      &pound;<span data-var="annualCost" data-format="%.02f"></span>
-    </strong>
-    every year!
   </p>
 </div>

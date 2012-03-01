@@ -17,9 +17,6 @@ Tangle.formats.pence = (value) ->
   (value * 100).round(3) + "p"
 
 $ ->
-  # FIXME Needs the hot/cold mix taken into account, in order to determine the
-  # actual hot water consumed, maybe by virtue of the target temperature?
-  #
   # FIXME: It would be kinda cool if we could work out the average gas cost,
   # based on the two-tiered rate we really have. For that, I'd need to capture
   # the two rates, the point at which it switches to the cheaper rate each
@@ -37,11 +34,15 @@ $ ->
       this.specificHeatOfWater      = 4186 # joules per kg-degree-C
       this.joulesToKwh              = 3600000
       this.showerFrequency          = 1
+      this.targetShowerTemperature  = 37
     update: ->
       this.waterTemperatureDelta = this.heatedWaterTemperature - this.incomingWaterTemperature
       this.litresOfWater         = this.showerFlowRate * this.minutesInShower
-      this.kgOfWater             = this.litresOfWater
-      this.totalKwh              = (this.specificHeatOfWater * this.kgOfWater * this.waterTemperatureDelta / this.boilerEfficiency) / this.joulesToKwh
+      this.percentageHotWater    = (this.targetShowerTemperature - this.incomingWaterTemperature) / this.waterTemperatureDelta
+      this.percentageColdWater   = 1 - this.percentageHotWater
+      this.litresOfHotWater      = this.litresOfWater * this.percentageHotWater
+      this.kgOfHotWater          = this.litresOfHotWater * 0.99225
+      this.totalKwh              = (this.specificHeatOfWater * this.kgOfHotWater * this.waterTemperatureDelta / this.boilerEfficiency) / this.joulesToKwh
       this.totalCost             = this.totalKwh * this.gasCost
 
       switch this.showerFrequency

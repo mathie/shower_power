@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require tangle/tangle
+//= require tangle_kit/mootools
+//= require tangle_kit/sprintf
+//= require tangle_kit/bvtouchable
+//= require tangle_kit/tangle_kit
 //= require_tree .

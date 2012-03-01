@@ -57,5 +57,8 @@ module ShowerPower
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Don't load the whole Rails stack when compiling assets.
+    config.assets.initialize_on_precompile = false
   end
 end

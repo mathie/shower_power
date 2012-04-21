@@ -4,6 +4,7 @@ gem 'rails', '3.2.1'
 
 gem 'thin'
 gem 'foreman'
+gem 'asset_sync'
 
 group :development do
   gem 'heroku'

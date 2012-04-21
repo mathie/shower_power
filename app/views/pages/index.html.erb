@@ -1,76 +1,102 @@
-<div class="hero-unit" id="showerCosts">
+<div class="page-header">
   <h1>Shower Power</h1>
+</div>
 
-  <p>
-    My son takes <em>ages</em> in the shower.
-    Like <span data-var="minutesInShower" class="TKAdjustableNumber" data-min="0" data-max="60"> minutes</span>.
-    I swear it's costing a fortune, but my wife doesn't believe me. These are
-    the sorts of lengths I'll go to, just to prove I'm right.
-  </p>
+<div class="row">
+  <div class="span8" id="showerCosts">
+    <p>
+      My son takes <em>ages</em> in the shower.
+      Like <span data-var="minutesInShower" class="TKAdjustableNumber" data-min="0" data-max="60"> minutes</span>.
+      I swear it's costing a fortune, but my wife doesn't believe me. These are
+      the sorts of lengths I'll go to, just to prove I'm right.
+    </p>
 
-  <p>
-    It turns out, given the other variables below, it costs
-    <strong>
-      &pound;<span data-var="totalCost" data-format="%.02f"></span>
-    </strong>
-    every time my son has a shower. He generally showers
-    <span data-var="showerFrequency" class="TKAdjustableNumber" data-min="0" data-max="3" data-format="showerFrequency"> </span>
-    which means it's costing me
-    <strong>
-      &pound;<span data-var="annualCost" data-format="%.02f"></span>
-    </strong>
-    every year to keep him clean!
-  </p>
+    <p>
+      It turns out, given the other variables below, it costs
+      <strong>
+        &pound;<span data-var="totalCost" data-format="%.02f"></span>
+      </strong>
+      every time my son has a shower. He generally showers
+      <span data-var="showerFrequency" class="TKAdjustableNumber" data-min="0" data-max="3" data-format="showerFrequency"> </span>
+      which means it's costing me
+      <strong>
+        &pound;<span data-var="annualCost" data-format="%.02f"></span>
+      </strong>
+      every year to keep him clean!
+    </p>
 
-  <p>
-    How do you compare? Grab the highlighted numbers and drag them around to
-    see how much money you're pouring down the drain!
-  </p>
+    <p>
+      How do you compare? Grab the highlighted numbers and drag them around to
+      see how much money you're pouring down the drain!
+    </p>
 
-  <h2>Water coming in</h2>
+    <h2>Water coming in</h2>
 
-  <p>
-    The water comes into our house at about
-    <span data-var="incomingWaterTemperature" class="TKAdjustableNumber" data-min="-10" data-max="20">&deg;C</span>
-    on average throughout the year. Our boiler then heats it up to about
-    <span data-var="heatedWaterTemperature" class="TKAdjustableNumber" data-min="10" data-max="100">&deg;C</span>
-    before it gets mixed with cold water at the shower. (It turns out that the
-    temperature the boiler heats it to doesn't really matter &ndash; try
-    playing with the numbers if you don't believe me!)
-  </p>
+    <p>
+      The water comes into our house at about
+      <span data-var="incomingWaterTemperature" class="TKAdjustableNumber" data-min="-10" data-max="20">&deg;C</span>
+      on average throughout the year. Our boiler then heats it up to about
+      <span data-var="heatedWaterTemperature" class="TKAdjustableNumber" data-min="10" data-max="100">&deg;C</span>
+      before it gets mixed with cold water at the shower. (It turns out that the
+      temperature the boiler heats it to doesn't really matter &ndash; try
+      playing with the numbers if you don't believe me!)
+    </p>
 
-  <p>
-    This means the boiler (which is
-    <span data-var="boilerEfficiency" class="TKAdjustableNumber" data-min="0" data-max="1" data-step="0.01" data-format="percent"></span>
-    efficient at heating water) needs to heat the water by about
-    <span data-var="waterTemperatureDelta">&deg;C</span>.
-  </p>
+    <p>
+      This means the boiler (which is
+      <span data-var="boilerEfficiency" class="TKAdjustableNumber" data-min="0" data-max="1" data-step="0.01" data-format="percent"></span>
+      efficient at heating water) needs to heat the water by about
+      <span data-var="waterTemperatureDelta">&deg;C</span>.
+    </p>
 
-  <h2>Shower</h2>
+    <h2>Shower</h2>
 
-  <p>
-    Our shower pushes out
-    <span data-var="showerFlowRate" class="TKAdjustableNumber" data-min="0" data-max="30"> litres</span>
-    of water every minute. That means I'm pouring
-    <span data-var="litresOfWater"> litres</span> of water down the drain when he has a shower.
-  </p>
+    <p>
+      Our shower pushes out
+      <span data-var="showerFlowRate" class="TKAdjustableNumber" data-min="0" data-max="30"> litres</span>
+      of water every minute. That means I'm pouring
+      <span data-var="litresOfWater"> litres</span> of water down the drain when he has a shower.
+    </p>
 
-  <p>
-    The target water temperature for a pleasant shower is
-    <span data-var="targetShowerTemperature" class="TKAdjustableNumber" data-min="0" data-max="50">&deg;C</span>.
-    In order to get that, we need to mix
-    <span data-var="percentageHotWater" data-format="percent"></span> hot water with
-    <span data-var="percentageColdWater" data-format="percent"></span> cold. Which means we're heating
-    <span data-var="litresOfHotWater" data-format="%d"> litres</span> of hot water for the shower.
-  </p>
+    <p>
+      The target water temperature for a pleasant shower is
+      <span data-var="targetShowerTemperature" class="TKAdjustableNumber" data-min="0" data-max="50">&deg;C</span>.
+      In order to get that, we need to mix
+      <span data-var="percentageHotWater" data-format="percent"></span> hot water with
+      <span data-var="percentageColdWater" data-format="percent"></span> cold. Which means we're heating
+      <span data-var="litresOfHotWater" data-format="%d"> litres</span> of hot water for the shower.
+    </p>
 
-  <h2>Costs</h2>
+    <h2>Costs</h2>
 
-  <p>
-    It costs us
-    <span data-var="gasCost" class="TKAdjustableNumber" data-min="0.00" data-max="0.20" data-step="0.001" data-format="pence"></span>
-    per kWh for our gas and
-    <span data-var="waterCost" class="TKAdjustableNumber" data-min="0.00" data-max="0.20" data-step="0.0001" data-format="pence"></span>
-    per litre for our water (including sewerage).
-  </p>
+    <p>
+      It costs us
+      <span data-var="gasCost" class="TKAdjustableNumber" data-min="0.00" data-max="0.20" data-step="0.001" data-format="pence"></span>
+      per kWh for our gas and
+      <span data-var="waterCost" class="TKAdjustableNumber" data-min="0.00" data-max="0.20" data-step="0.0001" data-format="pence"></span>
+      per litre for our water (including sewerage).
+    </p>
+  </div>
+
+  <div class="span4">
+    <div class="well">
+      <h2>Making Changes</h2>
+
+      <p>You can change any of the numbers that are highlighted in blue with
+        dotted underlines. Just click and drag the values left and right to
+        change. You're most likely to want to change:</p>
+
+      <ul>
+        <li><p>The amount of time spent in the shower. Nobody spends <em>that</em>
+            much time in the shower, right?</p></li>
+
+        <li><p>The volume of water the shower emits. We've got one of those rain
+            shower heads, so we're a bit above average. I believe the normal rate
+            is around 9l/minute.</p></li>
+
+        <li><p>The costs. We live in Scotland and don't pay for water. Water can be
+            expensive!</p></li>
+      </ul>
+    </div>
+  </div>
 </div>

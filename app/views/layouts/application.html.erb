@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="/application.manifest">
+<%= content_tag :html, manifest: Rails.env.development? ? nil : manifest_path do %>
   <head>
     <title>Shower Power</title>
     <meta charset="utf-8">
@@ -57,4 +57,4 @@
       </div>
     </div>
   </body>
-</html>
+<% end %>

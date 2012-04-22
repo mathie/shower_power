@@ -1,8 +1,10 @@
 CACHE MANIFEST
 
+<% if asset_paths.asset_digests.present? -%>
 CACHE:
 <% asset_paths.asset_digests.keys.each do |asset| -%>
 <%= asset_path(asset) %>
+<% end -%>
 <% end -%>
 
 NETWORK:

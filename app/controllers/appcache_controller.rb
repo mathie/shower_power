@@ -9,13 +9,11 @@ class AppcacheController < ApplicationController
   def self.freshness
     if @freshness.blank? || !Rails.env.production?
       @freshness = {}
-      [:index, :about].each do |page|
-        filename = Rails.root.join('app', 'views', 'appcache', "#{page}.html.erb")
-        @freshness[page] = {
-          last_modified: File.mtime(filename),
-          etag: Digest::MD5.hexdigest(File.read(filename))
-        }
-      end
+      filename = Rails.root.join('app', 'views', 'appcache', "index.appcache.erb")
+      @freshness[page] = {
+        last_modified: File.mtime(filename),
+        etag: Digest::MD5.hexdigest(File.read(filename))
+      }
     end
     @freshness
   end

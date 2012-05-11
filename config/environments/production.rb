@@ -40,7 +40,13 @@ ShowerPower::Application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production
-  # config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store
+
+  # Use Rack::Cache with memcached for caching page responses
+  config.middleware.use Rack::Cache,
+    verbose: true,
+    metastore: "memcached://#{ENV['MEMCACHE_SERVERS']}",
+    entitystore: "memcached://#{ENV['MEMCACHE_SERVERS']}"
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   config.action_controller.asset_host = "http://d2hoo6otf466n7.cloudfront.net"
